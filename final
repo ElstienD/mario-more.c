@@ -1,0 +1,44 @@
+// draws an ascii pyramid (2 sided) of a user defined height
+
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+
+//ask user for an integer between 0 and 24
+
+{
+    int h;
+    do
+    {
+        printf("What is the height of the pryamid? \n");
+        h = get_int();
+    }
+    while(h < 0 || h > 23);
+
+
+//use given int h to draw the side of the pryamid
+
+
+   for (int line = 0 ; line < h ; line++)
+    {
+        for (int spaces = h - line ; spaces > 1 ; spaces--)
+        {
+            printf(" ");
+        }
+        for (int hashes = 0 ; hashes < line + 1 ; hashes++)
+        {
+            printf("#");
+        }
+        for (int spaces = 0 ; spaces < 2 ; spaces++)
+        {
+            printf(" ");
+        }
+        for (int hashes = 0 ; hashes < line + 1 ; hashes++)
+        {
+            printf("#");
+        }
+
+        printf("\n");
+    }
+}
